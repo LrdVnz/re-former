@@ -29,18 +29,25 @@
  <% end %>
 <% end %>
 
-<%= form_with model: User.new, method: :post do |form| %>
-  <p>
+<%= form_with model: @user, method: :post do |form| %>
+  <div>
   <%= form.label :username, "Your coolest user name here: " %>
-  <%= form.text_field :username %>
-  <p>
+  <%= form.text_field :username, :value => 'Stupid Little Bitch' %>
+  </div>
+
+  <div>
   <%= form.label :email, "Email" %>
   <%= form.text_field :email, placeholder: "example@ifunny.com" %>
-  <p>
+  </div>
+
+  <div>
   <%= form.label :password, "Your strongest password for max security in case of nuclear explosion: " %> 
   <%= form.password_field :password %>
-  <p>
+  </div>
+
+  <div>
   <%= form.submit "Submit" %>
+  </div>
 <% end %>
 
 
