@@ -1,4 +1,11 @@
-<%= form_with model: @userm url: edit_user_path(@user), method: :patch do |form| %>
+<%= form_with model: @user, method: :patch do |form| %>
+  <div>
+  <% if @user.errors.any? %>
+  <p> ERROR <p>
+  <%= @user.errors.full_messages %>
+  <% end %>  
+  <div>
+
   <div>
   <%= form.label :username, "Your coolest user name here: " %>
   <%= form.text_field :username, :value => 'Stupid Little Bitch' %>
